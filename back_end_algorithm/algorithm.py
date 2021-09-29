@@ -10,6 +10,9 @@ processed = []
 def init(): 
     global graph, infinity, costs, parents, processed 
     graph = {} # 간선 정보 입력 
+    graph["DaeYang"]["First"]["kind"]["num"] = {}
+    graph["DaeYang"]["First"]["kind"]["num"]["end_point"] = 10
+    
     graph["A"] = {} 
     graph["A"]["B"] = 5 
     graph["A"]["C"] = 0 
@@ -43,8 +46,6 @@ def init():
     parents["F"] = None 
     # ------------------------------------------- 
     processed = []
-
-출처: https://www.crocus.co.kr/1688 [Crocus]
 
 
 def find_lowest_cost_node(costs): 
