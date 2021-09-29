@@ -5,15 +5,15 @@ infinity = float("inf")
 cost = {}
 parents = {}
 processed = []
-# 오현수 테스트
-# ㅇ응애
+
+
 # 초기화 
 def init(): 
     global graph, infinity, costs, parents, processed 
     graph = {} # 간선 정보 입력 
-    graph["DaeYang"]["First"]["kind"]["num"] = {}
+    graph[["DaeYang"]["First"]["kind"]["num"]] = {}
     graph["DaeYang"]["First"]["kind"]["num"]["end_point"] = 10
-    
+
     graph["A"] = {} 
     graph["A"]["B"] = 5 
     graph["A"]["C"] = 0 
@@ -85,3 +85,10 @@ def dijkstra(graph, start, final):
         print("최단 거리 : ", costs[final]) 
         print("진행 과정 : ", processed) 
         print("경로 : ", trace)
+
+
+graph = {} # 간선 정보 입력 
+graph[tuple([0,0,0,0])] = {}
+graph[tuple([0,0,0,0])]["end_point"] = 10
+
+print(graph)
