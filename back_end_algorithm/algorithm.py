@@ -5,7 +5,8 @@ infinity = float("inf")
 cost = {}
 parents = {}
 processed = []
-
+# 오현수 테스트
+# ㅇ응애
 # 초기화 
 def init(): 
     global graph, infinity, costs, parents, processed 
