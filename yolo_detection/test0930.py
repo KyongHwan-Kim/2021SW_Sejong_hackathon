@@ -15,6 +15,7 @@ with open("yolo.names", "r") as f:
 layer_names = YOLO_net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 
+# 상군씨 테스트
 while True:
 
     # 웹캠 프레임
