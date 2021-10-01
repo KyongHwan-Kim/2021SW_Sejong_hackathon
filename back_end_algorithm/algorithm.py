@@ -34,8 +34,28 @@ graph[tuple([3,0,0,0])][tuple([3,0,0,1])] = 0
 #===========Road_str=============[building][floor][kind][Kind_number][gate_number]
 graph[tuple([30,0,0,0])] = {} #"Road_str1_node1"
 graph[tuple([30,0,0,0])][tuple([3,0,0,1])] = 0
-graph[tuple([0,0,0,0])] = {} 
-graph[tuple([0,0,0,0])] = {} 
+graph[tuple([30,0,0,0])][tuple([30,0,0,1])] = 0
+graph[tuple([30,0,0,1])] = {} #"Road_str1_node2
+graph[tuple([30,0,0,1])][tuple([30,1,0,0])] = 0
+
+graph[tuple([30,1,0,0])] = {} #"Road_str2_node1
+graph[tuple([30,1,0,0])][tuple([30,1,0,1])]
+graph[tuple([30,1,0,1])] = {} #"Road_str2_node2
+graph[tuple([30,1,0,1])][tuple([30,1,0,2])]
+graph[tuple([30,1,0,1])][tuple([30,1,0,3])]
+graph[tuple([30,1,0,2])] = {} #"Road_str2_node3
+graph[tuple([30,1,0,2])][tuple([30,1,0,4])]
+graph[tuple([30,1,0,3])] = {} #"Road_str2_node4
+graph[tuple([30,1,0,4])] = {} #"Road_str2_node5
+
+graph[tuple([30,2,0,0])] = {} #"Road_str3_node1
+graph[tuple([30,2,0,0])][tuple([30,2,0,1])]
+graph[tuple([30,2,0,1])] = {} #"Road_str3_node2
+graph[tuple([30,2,0,2])] = {} #"Road_str3_node3
+graph[tuple([30,2,0,3])] = {} #"Road_str3_node4
+
+
+
 graph[tuple([0,0,0,0])] = {} 
 graph[tuple([0,0,0,0])] = {} 
 
@@ -58,6 +78,9 @@ graph[tuple([0,0,0,0])][tuple([3,0,0,1])] = 0
 graph[tuple([1,0,0,0])] = {} #"Gunja_1floor_gate_1"
 graph[tuple([1,0,0,0])][tuple([1,0,0,0])] = 0
 
+#==========Sejong_gaun==========[building][floor][kind][Kind_number][gate_number]
+graph[tuple([3,0,0,0])] = {} # sejong_1floor_gate_1"
+graph[tuple([3,0,0,1])] = {} # sejong_1floor_gate_2"
 
 
 
