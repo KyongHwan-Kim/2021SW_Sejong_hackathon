@@ -6,6 +6,43 @@ cost = {}
 parents = {}
 processed = []
 
+# definition [building][floor][kind][Kind_number][gate_number]
+# [0][][][] = DaeYangAI
+# [1][][][] = Gunja
+# [2][][][] = StudentHall
+# [30][][][] = Road
+# [][-2][][] = B1
+# [][-1][][] = B2
+# [][0][][] = 1F
+# [][1][][] = 2F
+# [][2][][] = 3F
+# [][][0][] = Gate
+# [][][1][] = Shop
+# [][][2][] = classroom
+# [][][3][] = EV Gate
+# [][][4][] = Stair Gate
+
+# ====================================
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
+tuple([2,0,0,0]) = "StudentHall_1floor_gate_1"
+tuple([2,0,0,1]) = "StudentHall_1floor_gate_2"
+
+
 
 # 초기화 
 def init(): 
