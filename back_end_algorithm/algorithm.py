@@ -140,5 +140,25 @@ def dijkstra(graph, start, final):
         print("경로 : ", trace)
 
 
-
+graph_test = {
+    'a':{'b':8, 'c':1, 'd':2},
+    'b':{},
+    'c':{'b':5, 'd':2},
+    'd':{'e':3, 'f':5},
+    'e':{'f':1},
+    'f':{'a':5}
+}
+costs = {} # 해당 노드 최단경로 입력 
+costs["A"] = infinity 
+costs["B"] = infinity 
+costs["C"] = infinity 
+costs["D"] = infinity 
+costs["E"] = infinity 
+costs["F"] = infinity 
+# parents = {} # 추적 경로를 위해 부모 설정 
+parents["B"] = None 
+parents["C"] = None 
+parents["D"] = None 
+parents["E"] = None 
+parents["F"] = None 
 print(graph)
