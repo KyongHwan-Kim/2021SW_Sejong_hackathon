@@ -10,7 +10,10 @@ processed = []
 # [0][][][] = DaeYangAI
 # [1][][][] = Gunja
 # [2][][][] = StudentHall
+# [3][][][] = MainGate
 # [30][][][] = Road
+# [30][1][][]= street
+# [30][1][0] = node num
 # [][-2][][] = B1
 # [][-1][][] = B2
 # [][0][][] = 1F
@@ -22,68 +25,58 @@ processed = []
 # [][][3][] = EV Gate
 # [][][4][] = Stair Gate
 
-# ====================================
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([0,0,0,0]) = "DaeYangAI_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([1,0,0,0]) = "Chungmu_1floor_gate_1"
-tuple([2,0,0,0]) = "StudentHall_1floor_gate_1"
-tuple([2,0,0,1]) = "StudentHall_1floor_gate_2"
+#==========Main_Gate=============[building][floor][kind][Kind_number][gate_number]
+graph[tuple([3,0,0,0])] = {} #"MainGate_1"
+graph[tuple([3,0,0,0])][tuple([3,0,0,1])] = 0
+graph[tuple([3,0,0,0])][tuple([30,0,0,0])] = 0
+graph[tuple([3,0,0,0])][tuple([3,0,0,1])] = 0
+
+#===========Road_str=============[building][floor][kind][Kind_number][gate_number]
+graph[tuple([30,0,0,0])] = {} #"Road_str1_node1"
+graph[tuple([30,0,0,0])][tuple([3,0,0,1])] = 0
+graph[tuple([0,0,0,0])] = {} 
+graph[tuple([0,0,0,0])] = {} 
+graph[tuple([0,0,0,0])] = {} 
+graph[tuple([0,0,0,0])] = {} 
+
+#===========StudentHall===========[building][floor][kind][Kind_number][gate_number]
+#Gate
+graph[tuple([2,0,0,0])] = {} # gate_1
+graph[tuple([2,0,0,0])][tuple([30,0,0,0])] = 0
+graph[tuple([2,0,0,1])] = {} # gate_2
+
+graph[tuple([2,0,0,2])] = {} #"StudentHall_1floor_gate_3"
+#Shop
+graph[tuple([2,0,1,0])] = {} #ParisBagate
+graph[tuple([2,0,1,0])][tuple([30,0,0,0])] = 0
+
+#===========DaeYangAI===========[building][floor][kind][Kind_number][gate_number]
+graph[tuple([0,0,0,0])] = {} #"DaeYangAI_1floor_gate_1"
+graph[tuple([0,0,0,0])][tuple([3,0,0,1])] = 0
+
+#=============Gunja=============[building][floor][kind][Kind_number][gate_number]
+graph[tuple([1,0,0,0])] = {} #"Gunja_1floor_gate_1"
+graph[tuple([1,0,0,0])][tuple([1,0,0,0])] = 0
 
 
 
-# 초기화 
-def init(): 
-    global graph, infinity, costs, parents, processed 
-    graph = {} # 간선 정보 입력 
-    graph[["DaeYang"]["First"]["kind"]["num"]] = {}
-    graph["DaeYang"]["First"]["kind"]["num"]["end_point"] = 10
 
-    graph["A"] = {} 
-    graph["A"]["B"] = 5 
-    graph["A"]["C"] = 0 
-    graph["B"] = {} 
-    graph["B"]["D"] = 15 
-    graph["B"]["E"] = 20 
-    graph["C"] = {} 
-    graph["C"]["D"] = 30 
-    graph["C"]["E"] = 35 
-    graph["D"] = {}
-    graph["D"]["F"] = 20 
-    graph["E"] = {} 
-    graph["E"]["F"] = 10 
-    graph["F"] = {} 
-    # ---------------------------------------- 
-    infinity = float("inf") 
-    # ------------------------------------------ 
-    costs = {} # 해당 노드 최단경로 입력 
-    costs["A"] = infinity 
-    costs["B"] = infinity 
-    costs["C"] = infinity 
-    costs["D"] = infinity 
-    costs["E"] = infinity 
-    costs["F"] = infinity 
-    # ------------------------------------------- 
-    # parents = {} # 추적 경로를 위해 부모 설정 
-    parents["B"] = None 
-    parents["C"] = None 
-    parents["D"] = None 
-    parents["E"] = None 
-    parents["F"] = None 
-    # ------------------------------------------- 
-    processed = []
+costs = {} # 해당 노드 최단경로 입력 
+costs["A"] = infinity 
+costs["B"] = infinity 
+costs["C"] = infinity 
+costs["D"] = infinity 
+costs["E"] = infinity 
+costs["F"] = infinity 
+# ------------------------------------------- 
+# parents = {} # 추적 경로를 위해 부모 설정 
+parents["B"] = None 
+parents["C"] = None 
+parents["D"] = None 
+parents["E"] = None 
+parents["F"] = None 
+
+
 
 
 def find_lowest_cost_node(costs): 
@@ -124,8 +117,5 @@ def dijkstra(graph, start, final):
         print("경로 : ", trace)
 
 
-graph = {} # 간선 정보 입력 
-graph[tuple([0,0,0,0])] = {}
-graph[tuple([0,0,0,0])]["end_point"] = 10
 
 print(graph)
